@@ -20,7 +20,7 @@ draw_outline no
 draw_shades no
 
 gap_x 550
-gap_y 200
+gap_y 1
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -63,7 +63,7 @@ lua_draw_hook_post main
 TEXT
 ${voffset 39}
 ${offset 87}${color1}${font :bold:pixelsize=21} CPU ${font}
-${offset 95}${color2}${exec sensors |grep temp|awk 'NR==1' | cut -d"+" -f2}
+${offset 95}${color2}${exec sensors |grep temp1|awk 'NR==1' | cut -d"+" -f2}
 ${offset 95}${color2}${exec sensors |grep fan2|awk '{printf "%1.1f\n",($2*100)/3200}'} % ≋
 ${offset 106}${color2}${cpu cpu0}%
 ${voffset 30}
