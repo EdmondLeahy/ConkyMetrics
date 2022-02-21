@@ -7,7 +7,7 @@
 background yes
 double_buffer yes
 
-alignment bottom_right
+alignment middle_left
 
 border_width 1
 cpu_avg_samples 2
@@ -63,7 +63,7 @@ lua_draw_hook_post main
 TEXT
 ${voffset 39}
 ${offset 87}${color1}${font :bold:pixelsize=21} CPU ${font}
-${offset 95}${color2}${exec sensors |grep temp1|awk 'NR==1' | cut -d"+" -f2}
+${offset 95}${color2}${exec sensors |grep SMBUSMASTER|awk 'NR==1' | cut -d"+" -f2}
 ${offset 95}${color2}${exec sensors |grep fan2|awk '{printf "%1.1f\n",($2*100)/3200}'} % ≋
 ${offset 106}${color2}${cpu cpu0}%
 ${voffset 30}

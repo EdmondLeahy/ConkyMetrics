@@ -7,7 +7,7 @@ thick_add = 1
 cpu_x_offset = 50
 cpu_y_offset = 0
 gpu_x_offset = 138
-gpu_y_offset = 133
+gpu_y_offset = 115
 mem_x_offset = 90
 mem_y_offset = 45
 
@@ -54,15 +54,15 @@ elements = {
         start_angle = 140,
         end_angle = 300,
     },
-    {
+   {
         -- CPU Tempurature Ring
-        kind = 'ring_graph_no_conky',
-        command = "sensors | grep temp1| awk '{print $2}' | sed 's/C//g;s/.$//;s/^.//'",
-        center = {x = 75+cpu_x_offset, y = 100+cpu_y_offset},
-        radius = 40+ rad_add,
-        to_percent = true,
-        percent_mod_maximum=60,
-        max_value = 100,
+       kind = 'ring_graph_no_conky',
+       command = "sensors | grep SMBUSMASTER| awk '{print $3}' | sed 's/C//g;s/.$//;s/^.//'",
+       center = {x = 75+cpu_x_offset, y = 100+cpu_y_offset},
+       radius = 40+ rad_add,
+         to_percent = true,
+         percent_mod_maximum=60,
+         max_value = 100,
         critical_threshold = 90,
 
         background_color = 0X00BFB2,
