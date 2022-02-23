@@ -62,8 +62,8 @@ elements = {
        radius = 40+ rad_add,
          to_percent = true,
          percent_mod_maximum=60,
-         max_value = 100,
-        critical_threshold = 90,
+         max_value = 125,
+        critical_threshold = 110,
 
         background_color = 0X00BFB2,
         background_alpha = 0.7,
